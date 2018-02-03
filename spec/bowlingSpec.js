@@ -45,12 +45,19 @@ describe('Frame', function(){
 });
 
 describe('ScoreCounting', function(){
-  
+
   var scoreCounting;
 
   beforeEach(function(){
     scoreCounting = new ScoreCounting();
   });
 
+  it('returns the frames array', function(){
+    expect(scoreCounting.frames()).toEqual([])
+  });
+
+  // it('adds frame to the frames array', function(frameScore){
+  //   expect(scoreCounting.frames()).toContain(frameScore);
+  // });
 
 });

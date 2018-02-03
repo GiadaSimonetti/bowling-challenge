@@ -18,6 +18,16 @@ Frame.prototype.totalScore = function () {
   return this.INITIAL_PINS - this.standingPins;
 };
 
-function scoreCounting() {
+function ScoreCounting() {
   frames = [];
+  // this.game = this.frames.slice(0, 9);
+};
+
+ScoreCounting.prototype.frames = function(){
+    return frames;
+  }
+
+ScoreCounting.prototype.addFrameScore = function (frameScore) {
+  frameScore = Frame.totalScore();
+  frames.push(frameScore);
 };
