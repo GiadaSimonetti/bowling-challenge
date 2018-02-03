@@ -13,24 +13,43 @@ describe('Frame', function(){
   });
 
   it('returns the pins', function(){
-    expect(frame.pins).toEqual(10);
+    expect(frame.standingPins).toEqual(10);
   });
 
-  it('returns the number of pins after the first roll', function(){
-    frame.firstRoll(2)
-    expect(frame.pins).toEqual(8);
+  it('returns the number of standing pins after the first roll', function(){
+    expect(frame.firstRoll(2)).toEqual(8)
   });
 
-  it('returns the number of pins after the second roll', function(){
-    frame.firstRoll(2)
-    frame.secondRoll(3)
-    expect(frame.pins).toEqual(5);
+  it('changes the namber of standing pins after the first roll', function(){
+    frame.firstRoll(2);
+    expect(frame.standingPins).toEqual(8);
+  });
+
+  it('returns the number of standing pins after the second roll', function(){
+    frame.firstRoll(2);
+    expect(frame.secondRoll(5)).toEqual(3);
+  });
+
+  it('changes the namber of standing pins after the second roll', function(){
+    frame.firstRoll(2);
+    frame.secondRoll(5);
+    expect(frame.standingPins).toEqual(3);
   });
 
   it('returns the frame score', function(){
     frame.firstRoll(2)
-    frame.secondRoll(3)
-    expect(frame.pins).toEqual(5);
+    frame.secondRoll(5)
+    expect(frame.totalScore()).toEqual(7);
+  });
+
+});
+
+describe('ScoreCounting', function(){
+  
+  var scoreCounting;
+
+  beforeEach(function(){
+    scoreCounting = new ScoreCounting();
   });
 
 
