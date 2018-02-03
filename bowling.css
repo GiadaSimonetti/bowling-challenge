@@ -1,0 +1,30 @@
+body{
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  line-height: 200%;
+  background-color: #e6e6e6;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("http://media.mlive.com/michigan_beer/photo/2016/05/19/the-big-lebowski-f38710ce23accce5.jpg");
+
+    /* Set a specific height */
+    min-height: 700px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+  padding-top: 50px;
+  height: 1000px;
+  font-size:20px;
+  background-color: #e6e6e6;
+  /* border: 1px solid black; */
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}

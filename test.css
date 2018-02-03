@@ -1,0 +1,21 @@
+body {
+  background-image: url("http://media.mlive.com/michigan_beer/photo/2016/05/19/the-big-lebowski-f38710ce23accce5.jpg");
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  line-height: 200%;
+  margin: 100px, auto;
+  background-repeat: no-repeat;
+   background-size: cover;
+   background-position: 100% top;
+   background-attachment: fixed;
+}
+
+.transbox {
+    margin: 30px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    margin-top: 400px;
+}
