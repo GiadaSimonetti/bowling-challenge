@@ -52,4 +52,15 @@ describe('Bowling', function(){
     expect(bowling.score).toEqual(0);
   });
 
+  it('returns the sum all the frames', function(){
+    bowling.firstRoll(2);
+    bowling.secondRoll(5);
+    bowling.addTotalFrameScore();
+    bowling.firstRoll(4);
+    bowling.secondRoll(3);
+    bowling.addTotalFrameScore();
+    expect(bowling.gameScore()).toEqual(14);
+  });
+
+
 });

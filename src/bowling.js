@@ -31,3 +31,7 @@ Bowling.prototype.resetPinsAndScore = function () {
   this.standingPins = this.INITIAL_PINS;
   this.score = this.INITIAL_SCORE;
 };
+
+Bowling.prototype.gameScore = function () {
+  return this.frames.reduce(function(a, b) { return a + b });
+};
