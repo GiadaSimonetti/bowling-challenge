@@ -37,26 +37,27 @@ describe('Bowling', function(){
   });
 
   it('returns the bowling score', function(){
-    bowling.firstRoll(2)
-    bowling.secondRoll(5)
-    expect(bowling.totalScore()).toEqual(7);
+    bowling.firstRoll(2);
+    bowling.secondRoll(5);
+    bowling.totalFrameScore();
+    expect(bowling.score).toEqual(7);
   });
 
   it('returns the initial number of standing pins', function(){
-    bowling.firstRoll(2)
-    bowling.secondRoll(5)
-    bowling.resetPins()
+    bowling.firstRoll(2);
+    bowling.secondRoll(5);
+    bowling.resetPins();
     expect(bowling.standingPins).toEqual(10);
   });
 
   it('returns the frames array', function(){
-    expect(bowling.frames()).toEqual([])
+    expect(bowling.frames()).toEqual([]);
   });
 
-  // it('adds frame to the frames array', function(frameScore){
-  //   spyOn(frame, 'totalScore').and.returnValue(8);
-  //   frameScore = frame.totalScore();
-  //   expect(scoreCounting.frames()).toContain(frameScore);
+  // it('adds frame score to the frames array', function(){
+  //   spyOn(bowling, 'totalFrameScore').and.returnValue(8);
+  //   bowling.totalFrameScore(8)
+  //   expect(bowling.frames()).toContain(8);
   // });
 
 });

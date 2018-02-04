@@ -15,8 +15,8 @@ Bowling.prototype.secondRoll = function (knockedDownPins) {
   return this.standingPins -= knockedDownPins;
 };
 
-Bowling.prototype.totalScore = function () {
-  return this.INITIAL_PINS - this.standingPins;
+Bowling.prototype.totalFrameScore = function () {
+  return this.score +=  this.INITIAL_PINS - this.standingPins;
 };
 
 Bowling.prototype.resetPins = function () {
@@ -27,6 +27,7 @@ Bowling.prototype.frames = function(){
     return frames;
   }
 
-// ScoreCounting.prototype.addBowlingScore = function (callback) {
-//   frames.push(callback);
-// };
+Bowling.prototype.addTotalFrameScore = function (score) {
+
+  frames.push(score);
+};
