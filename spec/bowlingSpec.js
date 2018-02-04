@@ -16,6 +16,10 @@ describe('Bowling', function(){
     expect(bowling.standingPins).toEqual(10);
   });
 
+  it('returns the empty frames array', function(){
+    expect(bowling.frames).toEqual([]);
+  });
+
   it('changes the namber of standing pins after the first roll', function(){
     bowling.firstRoll(2);
     expect(bowling.standingPins).toEqual(8);
@@ -30,14 +34,12 @@ describe('Bowling', function(){
   it('updates the frame score', function(){
     bowling.firstRoll(2);
     bowling.secondRoll(5);
-    bowling.totalFrameScore();
     expect(bowling.score).toEqual(7);
   });
 
   it('adds frame score to the frames array', function(){
     bowling.firstRoll(2);
     bowling.secondRoll(6);
-    bowling.totalFrameScore();
     bowling.addTotalFrameScore();
     expect(bowling.frames).toContain(8);
   });
@@ -45,9 +47,7 @@ describe('Bowling', function(){
   it('resets standing pins and frame score', function(){
     bowling.firstRoll(2);
     bowling.secondRoll(5);
-    bowling.totalFrameScore();
     bowling.addTotalFrameScore();
-    bowling.resetPinsAndScore();
     expect(bowling.standingPins).toEqual(10);
     expect(bowling.score).toEqual(0);
   });
