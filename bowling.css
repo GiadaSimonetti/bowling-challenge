@@ -53,8 +53,17 @@ th, td {
 }
 
 input[type=text] {
+    width: 200px;
     padding: 8px 15px;
     margin: 8px 0;
     border: 1px solid black;
     box-sizing: border-box;
+}
+
+#frames {
+  width: 100px;
+  height: 25px;
+  margin: 8px 0;
+  border: 1px solid black;
+  box-sizing: border-box;
 }

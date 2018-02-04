@@ -15,7 +15,7 @@
 
   <div class="name">
     <form class="name" action="index.html" method="post">
-      <input type="text" name="name" value="Your name">
+      <input type="text" name="name" placeholder="Your name">
       <input type="button" name="submit" value="submit">
     </form>
   </div>
@@ -25,7 +25,8 @@
     <span class="frame-choice">
     <form class="frame-dropdown" action="index.html" method="post">
       <select id="frames" name="frames">
-        <option select="selected" value="1">1</option>
+        <option selected disabled>Frames</option>
+        <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
@@ -40,9 +41,9 @@
   </span>
   <span>
     <form class="knocked-down-pins" action="index.html" method="post">
-      <input type="text" name="first-frame" value="Knocked down pins 1st frame">
+      <input type="text" name="first-frame" placeholder="Knocked down pins 1st frame">
       <input type="button" name="submit" value="submit">
-      <input type="text" name="second-frame" value="Knocked down pins 2nd frame">
+      <input type="text" name="second-frame" placeholder="Knocked down pins 2nd frame">
       <input type="button" name="submit" value="submit">
     </form>
   </span>
@@ -59,16 +60,16 @@
         <th>Total score</th>
       </tr>
       <tr>
+        <td >1</td>
         <td>1</td>
-        <td>1</td>
-        <td></td>
-        <td></td>
+        <td id="1f1r-KDP"></td>
+        <td id="1f1r-SCORE"></td>
       </tr>
       <tr>
         <td>1</td>
         <td>2</td>
-        <td></td>
-        <td></td>
+        <td id="1f2r-KDP"></td>
+        <td id="1f2r-SCORE"></td>
       </tr>
       <tr>
         <td>2</td>
