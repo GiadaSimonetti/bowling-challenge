@@ -19,7 +19,7 @@ Frame.prototype.totalScore = function () {
 };
 
 Frame.prototype.resetPins = function () {
-  return this.standingPins - this.INITIAL_PINS;
+  return this.standingPins = this.INITIAL_PINS;
 };
 
 function ScoreCounting() {
@@ -31,7 +31,6 @@ ScoreCounting.prototype.frames = function(){
     return frames;
   }
 
-// ScoreCounting.prototype.addFrameScore = function (frameScore) {
-//   frameScore = Frame.totalScore;
-//   frames.push(frameScore);
+// ScoreCounting.prototype.addFrameScore = function (callback) {
+//   frames.push(callback);
 // };

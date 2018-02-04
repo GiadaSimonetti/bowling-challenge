@@ -43,6 +43,8 @@ describe('Frame', function(){
   });
 
   it('returns the initial number of standing pins', function(){
+    frame.firstRoll(2)
+    frame.secondRoll(5)
     frame.resetPins()
     expect(frame.standingPins).toEqual(10);
   });
@@ -62,6 +64,8 @@ describe('ScoreCounting', function(){
   });
 
   // it('adds frame to the frames array', function(frameScore){
+  //   spyOn(frame, 'totalScore').and.returnValue(8);
+  //   frameScore = frame.totalScore();
   //   expect(scoreCounting.frames()).toContain(frameScore);
   // });
 
