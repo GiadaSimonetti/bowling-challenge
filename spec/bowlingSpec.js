@@ -42,6 +42,11 @@ describe('Frame', function(){
     expect(frame.totalScore()).toEqual(7);
   });
 
+  it('returns the initial number of standing pins', function(){
+    frame.resetPins()
+    expect(frame.standingPins).toEqual(10);
+  });
+
 });
 
 describe('ScoreCounting', function(){
