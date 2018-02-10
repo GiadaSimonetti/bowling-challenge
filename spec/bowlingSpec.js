@@ -16,6 +16,10 @@ describe('Bowling', function(){
     expect(bowling.standingPins).toEqual(10);
   });
 
+  it('returns the frame', function(){
+    expect(bowling.frame).toEqual(1);
+  });
+
   it('returns the empty frames array', function(){
     expect(bowling.frames).toEqual([]);
   });
@@ -63,5 +67,9 @@ describe('Bowling', function(){
     expect(bowling.totalScore).toEqual(14);
   });
 
+  it('increments the frame', function(){
+    bowling.incrementFrame();
+    expect(bowling.frame).toEqual(2);
+  });
 
 });

@@ -3,8 +3,10 @@
 function Bowling(){
   this.INITIAL_PINS = 10;
   this.INITIAL_SCORE = 0;
+  this.INITIAL_FRAME = 1;
   this.frameScore = this.INITIAL_SCORE;
   this.totalScore = this.INITIAL_SCORE;
+  this.frame = this.INITIAL_FRAME;
   this.standingPins = this.INITIAL_PINS;
   this.frames = [];
 };
@@ -34,6 +36,9 @@ Bowling.prototype.resetPinsAndScore = function () {
 };
 
 Bowling.prototype.gameScore = function () {
-  // return this.frames.reduce(function(a, b) { return a + b });
   this.totalScore = this.frames.reduce(function (a, b) { return a + b;}, 0);
+};
+
+Bowling.prototype.incrementFrame = function () {
+  this.frame += 1
 };
