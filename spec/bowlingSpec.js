@@ -9,7 +9,7 @@ describe('Bowling', function(){
   });
 
   it('returns the score', function(){
-    expect(bowling.score).toEqual(0);
+    expect(bowling.frameScore).toEqual(0);
   });
 
   it('returns the pins', function(){
@@ -34,7 +34,7 @@ describe('Bowling', function(){
   it('updates the frame score', function(){
     bowling.firstRoll(2);
     bowling.secondRoll(5);
-    expect(bowling.score).toEqual(7);
+    expect(bowling.frameScore).toEqual(7);
   });
 
   it('adds frame score to the frames array', function(){
@@ -49,7 +49,7 @@ describe('Bowling', function(){
     bowling.secondRoll(5);
     bowling.addTotalFrameScore();
     expect(bowling.standingPins).toEqual(10);
-    expect(bowling.score).toEqual(0);
+    expect(bowling.frameScore).toEqual(0);
   });
 
   it('returns the sum all the frames', function(){
@@ -59,7 +59,8 @@ describe('Bowling', function(){
     bowling.firstRoll(4);
     bowling.secondRoll(3);
     bowling.addTotalFrameScore();
-    expect(bowling.gameScore()).toEqual(14);
+    bowling.gameScore();
+    expect(bowling.totalScore).toEqual(14);
   });
 
 

@@ -3,7 +3,8 @@
 function Bowling(){
   this.INITIAL_PINS = 10;
   this.INITIAL_SCORE = 0;
-  this.score = this.INITIAL_SCORE;
+  this.frameScore = this.INITIAL_SCORE;
+  this.totalScore = this.INITIAL_SCORE;
   this.standingPins = this.INITIAL_PINS;
   this.frames = [];
 };
@@ -19,19 +20,20 @@ Bowling.prototype.secondRoll = function (knockedDownPins) {
 };
 
 Bowling.prototype.totalFrameScore = function () {
-  this.score = this.INITIAL_PINS - this.standingPins;
+  this.frameScore = this.INITIAL_PINS - this.standingPins;
 };
 
 Bowling.prototype.addTotalFrameScore = function () {
-  this.frames.push(this.score);
+  this.frames.push(this.frameScore);
   this.resetPinsAndScore();
 };
 
 Bowling.prototype.resetPinsAndScore = function () {
   this.standingPins = this.INITIAL_PINS;
-  this.score = this.INITIAL_SCORE;
+  this.frameScore = this.INITIAL_SCORE;
 };
 
 Bowling.prototype.gameScore = function () {
-  return this.frames.reduce(function(a, b) { return a + b });
+  // return this.frames.reduce(function(a, b) { return a + b });
+  this.totalScore = this.frames.reduce(function (a, b) { return a + b;}, 0);
 };

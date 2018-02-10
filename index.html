@@ -4,6 +4,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="bowling.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
+<script src="src/bowling.js"></script>
+<script src="src/jquery-bowling.js"></script>
 </head>
 <body>
 
@@ -14,9 +20,9 @@
 <div class="content">
 
   <div class="name">
-    <form class="name" action="index.html" method="post">
-      <input type="text" name="name" placeholder="Your name">
-      <input type="button" name="submit" value="submit">
+    <form id="player-name-form" class="name" action="index.html" method="post">
+      <input id="player-name" type="text" name="name" placeholder="Your name">
+      <input id="btn-name" type="button" name="submit" value="submit">
     </form>
   </div>
 
@@ -41,14 +47,16 @@
   </span>
   <span>
     <form class="knocked-down-pins" action="index.html" method="post">
-      <input type="text" name="first-frame" placeholder="Knocked down pins 1st frame">
-      <input type="button" name="submit" value="submit">
-      <input type="text" name="second-frame" placeholder="Knocked down pins 2nd frame">
-      <input type="button" name="submit" value="submit">
+      <input id="KDP-1-roll" type="text" name="first-frame" placeholder="Knocked down pins 1st roll">
+      <input id="btn-1-roll" type="button" name="submit" value="submit">
+      <input id="KDP-2-roll" type="text" name="second-frame" placeholder="Knocked down pins 2nd roll">
+      <input id="btn-2-roll" type="button" name="submit" value="submit">
     </form>
   </span>
 </p>
 </div>
+
+<p id="display-player-name"></p>
 
   <div class="table">
     <table>
@@ -74,110 +82,110 @@
       <tr>
         <td>2</td>
         <td>1</td>
-        <td></td>
-        <td></td>
+        <td id="2f1r-KDP"></td>
+        <td id="2f1r-SCORE"></td>
       </tr>
       <tr>
         <td>2</td>
         <td>2</td>
-        <td></td>
-        <td></td>
+        <td id="2f2r-KDP"></td>
+        <td id="2f2r-SCORE"></td>
       </tr>
       <tr>
         <td>3</td>
         <td>1</td>
-        <td></td>
-        <td></td>
+        <td id="3f1r-KDP"></td>
+        <td id="3f1r-SCORE"></td>
       </tr>
       <tr>
         <td>3</td>
         <td>2</td>
-        <td></td>
-        <td></td>
+        <td id="3f2r-KDP"></td>
+        <td id="3f2r-SCORE"></td>
       </tr>
       <tr>
         <td>4</td>
         <td>1</td>
-        <td></td>
-        <td></td>
+        <td id="4f1r-KDP"></td>
+        <td id="4f1r-SCORE"></td>
       </tr>
       <tr>
         <td>4</td>
         <td>2</td>
-        <td></td>
-        <td></td>
+        <td id="4f2r-KDP"></td>
+        <td id="4f2r-SCORE"></td>
       </tr>
       <tr>
         <td>5</td>
         <td>1</td>
-        <td></td>
-        <td></td>
+        <td id="5f1r-KDP"></td>
+        <td id="5f1r-SCORE"></td>
       </tr>
       <tr>
         <td>5</td>
         <td>2</td>
-        <td></td>
-        <td></td>
+        <td id="5f2r-KDP"></td>
+        <td id="5f2r-SCORE"></td>
       </tr>
       <tr>
         <td>6</td>
         <td>1</td>
-        <td></td>
-        <td></td>
+        <td id="6f1r-KDP"></td>
+        <td id="6f1r-SCORE"></td>
       </tr>
       <tr>
         <td>6</td>
         <td>2</td>
-        <td></td>
-        <td></td>
+        <td id="6f2r-KDP"></td>
+        <td id="6f2r-SCORE"></td>
       </tr>
       <tr>
         <td>7</td>
         <td>1</td>
-        <td></td>
-        <td></td>
+        <td id="7f1r-KDP"></td>
+        <td id="7f1r-SCORE"></td>
       </tr>
       <tr>
         <td>7</td>
         <td>2</td>
-        <td></td>
-        <td></td>
+        <td id="7f2r-KDP"></td>
+        <td id="7f2r-SCORE"></td>
       </tr>
       <tr>
         <td>8</td>
         <td>1</td>
-        <td></td>
-        <td></td>
+        <td id="8f1r-KDP"></td>
+        <td id="8f1r-SCORE"></td>
       </tr>
       <tr>
         <td>8</td>
         <td>2</td>
-        <td></td>
-        <td></td>
+        <td id="8f2r-KDP"></td>
+        <td id="8f2r-SCORE"></td>
       </tr>
       <tr>
         <td>9</td>
         <td>1</td>
-        <td></td>
-        <td></td>
+        <td id="9f1r-KDP"></td>
+        <td id="9f1r-SCORE"></td>
       </tr>
       <tr>
         <td>9</td>
         <td>2</td>
-        <td></td>
-        <td></td>
+        <td id="9f2r-KDP"></td>
+        <td id="9f2r-SCORE"></td>
       </tr>
       <tr>
         <td>10</td>
         <td>1</td>
-        <td></td>
-        <td></td>
+        <td id="10f1r-KDP"></td>
+        <td id="10f1r-SCORE"></td>
       </tr>
       <tr>
         <td>10</td>
         <td>2</td>
-        <td></td>
-        <td></td>
+        <td id="10f2r-KDP"></td>
+        <td id="10f2r-SCORE"></td>
       </tr>
       <tr>
         <td>10</td>
