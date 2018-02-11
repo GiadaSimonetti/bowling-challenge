@@ -4,23 +4,31 @@ function Bowling(){
   this.INITIAL_PINS = 10;
   this.INITIAL_SCORE = 0;
   this.INITIAL_FRAME = 1;
+  // this.MAX_FRAME_KNOCKED_DOWN_PINS = this.INITIAL_PINS;
+  // this.MAX_1_ROLL_KNOCKED_DOWN_PINS = this.INITIAL_PINS;
   this.frameScore = this.INITIAL_SCORE;
   this.totalScore = this.INITIAL_SCORE;
   this.currentFrame = this.INITIAL_FRAME;
   this.standingPins = this.INITIAL_PINS;
   this.frames = [];
-  this.spareStatus = false;
-  this.strikeStatus = false;
+  this.isSpare = false;
+  this.isStrike = false;
 };
 
 Bowling.prototype.firstRoll = function (knockedDownPins) {
   this.standingPins -= knockedDownPins;
   this.totalFrameScore();
+  if (this.standingPins == 0) {
+    this.isStrike = true
+  }
 };
 
 Bowling.prototype.secondRoll = function (knockedDownPins) {
   this.standingPins -= knockedDownPins;
   this.totalFrameScore();
+  if (this.standingPins == 0) {
+    this.isSpare = true
+  }
 };
 
 Bowling.prototype.totalFrameScore = function () {
@@ -44,6 +52,7 @@ Bowling.prototype.gameScore = function () {
 Bowling.prototype.incrementFrame = function () {
   this.currentFrame += 1
 };
+
 
 // Bowling.prototype.frameStatus = function () {
 //   if (this.totalFrameScore() = 10) {

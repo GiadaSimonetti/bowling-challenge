@@ -20,27 +20,48 @@ describe('Bowling', function(){
     expect(bowling.currentFrame).toEqual(1);
   });
 
+  // it('returns the frame', function(){
+  //   expect(bowling.MAX_FRAME_KNOCKED_DOWN_PINS).toEqual(10);
+  // });
+  //
+  // it('returns the frame', function(){
+  //   expect(bowling.MAX_1_ROLL_KNOCKED_DOWN_PINS).toEqual(10);
+  // });
+
   it('returns the empty frames array', function(){
     expect(bowling.frames).toEqual([]);
   });
 
   it('returns the game status', function(){
-    expect(bowling.spareStatus).toEqual(false);
+    expect(bowling.isSpare).toEqual(false);
   });
 
   it('returns the game status', function(){
-    expect(bowling.strikeStatus).toEqual(false);
+    expect(bowling.isStrike).toEqual(false);
   });
 
-  it('changes the namber of standing pins after the first roll', function(){
+  it('changes the number of standing pins after the first roll', function(){
     bowling.firstRoll(2);
     expect(bowling.standingPins).toEqual(8);
+  });
+
+  it('changes the strike status', function(){
+    bowling.firstRoll(10);
+    expect(bowling.isStrike).toEqual(true);
+    expect(bowling.isSpare).toEqual(false);
   });
 
   it('changes the number of standing pins after the second roll', function(){
     bowling.firstRoll(2);
     bowling.secondRoll(5);
     expect(bowling.standingPins).toEqual(3);
+  });
+
+  it('changes the number of standing pins after the second roll', function(){
+    bowling.firstRoll(4);
+    bowling.secondRoll(6);
+    expect(bowling.isSpare).toEqual(true);
+    expect(bowling.isStrike).toEqual(false);
   });
 
   it('updates the frame score', function(){
@@ -95,5 +116,6 @@ describe('Bowling', function(){
     bowling.gameScore();
     expect(bowling.totalScore).toEqual(21);
   });
+
 
 });
