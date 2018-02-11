@@ -20,6 +20,10 @@ describe('Bowling', function(){
     expect(bowling.currentFrame).toEqual(1);
   });
 
+  it('returns the roll', function(){
+    expect(bowling.currentRoll).toEqual(1);
+  });
+
   // it('returns the frame', function(){
   //   expect(bowling.MAX_FRAME_KNOCKED_DOWN_PINS).toEqual(10);
   // });
@@ -103,19 +107,9 @@ describe('Bowling', function(){
     expect(bowling.currentFrame).toEqual(2);
   });
 
-  it('checks the spare score', function(){
-    bowling.firstRoll(5);
-    bowling.secondRoll(5);
-    bowling.addTotalFrameScore();
-    bowling.incrementFrame();
-    bowling.firstRoll(4);
-    bowling.secondRoll(3);
-    bowling.addTotalFrameScore();
-    bowling.incrementFrame();
-    bowling.spareScore();
-    bowling.gameScore();
-    expect(bowling.totalScore).toEqual(21);
+  it('increments the roll', function(){
+    bowling.incrementRoll();
+    expect(bowling.currentRoll).toEqual(2);
   });
-
 
 });

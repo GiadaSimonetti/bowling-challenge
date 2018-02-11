@@ -17,6 +17,9 @@ $(document).ready(function(){
       $("#" + bowling.currentFrame + "f1r-KDP").html(kdpFirstRoll);
       bowling.firstRoll(kdpFirstRoll);
       $("#" + bowling.currentFrame + "f1r-SCORE").html( );
+      if (bowling.isStrike) {
+        $("#" + bowling.currentFrame + "f1r-BONUS").html("Strike!");
+      }
     });
 
     $("#btn-2-roll").click(function() {
@@ -27,8 +30,10 @@ $(document).ready(function(){
       bowling.addTotalFrameScore();
       bowling.gameScore();
       $("#" + bowling.currentFrame + "f2r-SCORE").html(bowling.totalScore);
+      if (bowling.isSpare) {
+        $("#" + bowling.currentFrame + "f1r-BONUS").html("Spare!");
+      }
       bowling.incrementFrame();
     });
-
 
 });
