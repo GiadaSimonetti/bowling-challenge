@@ -59,6 +59,19 @@ input[type=text] {
     border: 1px solid black;
     box-sizing: border-box;
 }
+input[type=number] {
+    width: 200px;
+    padding: 8px 15px;
+    margin: 8px 0;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none !important;
+    border:1px solid #a54630;
+    box-shadow: 0 0 10px #a54630;
+}
 
 #frames {
   width: 100px;

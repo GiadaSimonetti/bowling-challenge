@@ -17,11 +17,19 @@ describe('Bowling', function(){
   });
 
   it('returns the frame', function(){
-    expect(bowling.frame).toEqual(1);
+    expect(bowling.currentFrame).toEqual(1);
   });
 
   it('returns the empty frames array', function(){
     expect(bowling.frames).toEqual([]);
+  });
+
+  it('returns the game status', function(){
+    expect(bowling.spareStatus).toEqual(false);
+  });
+
+  it('returns the game status', function(){
+    expect(bowling.strikeStatus).toEqual(false);
   });
 
   it('changes the namber of standing pins after the first roll', function(){
@@ -60,16 +68,32 @@ describe('Bowling', function(){
     bowling.firstRoll(2);
     bowling.secondRoll(5);
     bowling.addTotalFrameScore();
+    bowling.incrementFrame();
     bowling.firstRoll(4);
     bowling.secondRoll(3);
     bowling.addTotalFrameScore();
+    bowling.incrementFrame();
     bowling.gameScore();
     expect(bowling.totalScore).toEqual(14);
   });
 
   it('increments the frame', function(){
     bowling.incrementFrame();
-    expect(bowling.frame).toEqual(2);
+    expect(bowling.currentFrame).toEqual(2);
+  });
+
+  it('checks the spare score', function(){
+    bowling.firstRoll(5);
+    bowling.secondRoll(5);
+    bowling.addTotalFrameScore();
+    bowling.incrementFrame();
+    bowling.firstRoll(4);
+    bowling.secondRoll(3);
+    bowling.addTotalFrameScore();
+    bowling.incrementFrame();
+    bowling.spareScore();
+    bowling.gameScore();
+    expect(bowling.totalScore).toEqual(21);
   });
 
 });
